@@ -1,0 +1,58 @@
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-hero);
+  padding: var(--space-xl) 0 var(--space-lg);
+  text-align: center;
+  width: 100%; /* Ensures the main section never exceeds screen width */
+}
+
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden; /* This acts as a hard wall to trap the blur bleed */
+  width: 100%;
+}
+
+.page-hero__glow {
+  position: absolute;
+  top: -140px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* Scales down naturally on small screens */
+  max-width: 480px; /* Prevents it from getting bigger than your original design */
+  height: 320px;
+  background: var(--color-teal-bright);
+  opacity: 0.22;
+  filter: blur(90px);
+  border-radius: 50%;
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero__eyebrow {
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-teal-bright);
+  margin-bottom: 0.8rem;
+}
+
+.page-hero h1 {
+  color: #fff;
+  font-size: clamp(2rem, 3.5vw + 1rem, 3.2rem);
+  overflow-wrap: break-word; /* Prevents long words from breaking the layout */
+  word-wrap: break-word;
+}
+
+.page-hero__subtitle {
+  margin-top: 0.9rem;
+  color: rgba(255,255,255,0.82);
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}

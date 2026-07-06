@@ -1,0 +1,21 @@
+.scroll-top {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 90;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-accent);
+  color: #fff;
+  font-size: 1.3rem;
+  box-shadow: 0 10px 26px rgba(14, 124, 123, 0.34);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.scroll-top:hover {
+  transform: translateY(-3px);
+}

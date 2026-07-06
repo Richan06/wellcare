@@ -1,0 +1,176 @@
+.footer {
+  background: rgb(1, 40, 79);
+  color: rgba(255,255,255,0.85);
+  padding-top: 20px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  text-align: center; 
+}
+
+.footer__brand-link {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.footer__logo {
+  width: 200px;
+  height: 70px;
+  padding: 2px;
+}
+
+.footer__brand-link span {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.footer__brand-link strong {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.footer__brand-link small {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-teal-bright);
+}
+
+.footer__tagline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-teal-bright);
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.footer__desc {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.62);
+  max-width: 320px;
+  margin: 0 auto; /* 3. Forces the description block itself to sit in the center */
+}
+
+.footer__col h4 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.footer__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center; /* 4. Centers the quick links and contact rows */
+}
+
+.footer__col ul li a,
+.footer__link-btn {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.footer__col ul li a:hover,
+.footer__link-btn:hover {
+  color: var(--color-teal-bright);
+}
+
+.footer__link-btn {
+  text-align: center; /* 5. Centers button text */
+}
+
+.links_title{
+  color: rgb(46, 191, 165);
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.footer__contact li {
+  display: flex;
+  align-items: center; /* 6. Aligns icons vertically with the text on mobile */
+  gap: 0.65rem;
+  font-size: 0.88rem;
+}
+
+.footer__contact li svg {
+  flex-shrink: 0;
+  font-size: 1.05rem;
+  color: var(--color-teal-bright);
+}
+
+.footer__contact li a {
+  color: rgba(255,255,255,0.78);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.footer__contact li a:hover {
+  color: var(--color-teal-bright);
+}
+
+.footer__bottom {
+  padding-top: 2px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer__bottom-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 7. Centers the bottom copyright text */
+  text-align: center;
+  gap: 0.4rem;
+  padding: 1.4rem 0;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+}
+
+.footer__bottom-inner p {
+  font-size: 0.8rem;
+}
+
+@media (min-width: 640px) {
+  .footer__bottom-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* --- THE RESET: Snaps everything back to the left on Desktop --- */
+@media (min-width: 768px) {
+  .footer__grid {
+    grid-template-columns: 1.3fr 1fr 1.2fr;
+    text-align: left; 
+  }
+
+  .footer__brand-link {
+    justify-content: flex-start;
+  }
+
+  .footer__desc {
+    margin: 0;
+  }
+
+  .footer__col ul {
+    align-items: flex-start;
+  }
+
+  .footer__link-btn {
+    text-align: left;
+  }
+
+  .footer__contact li {
+    align-items: flex-start;
+  }
+
+  .footer__contact li svg {
+    margin-top: 0.15rem; /* Restores the top margin for multi-line addresses */
+  }
+}

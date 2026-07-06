@@ -1,0 +1,197 @@
+/* --- MAIN SECTIONS (Safety Nets Added) --- */
+.contact,
+.contact-map {
+  background: var(--color-bg);
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden; /* Stops any child from bleeding off the screen */
+  box-sizing: border-box;
+}
+
+.contact-map {
+  background: var(--color-surface);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.contact__info h2 {
+  margin-bottom: 1.5rem;
+}
+
+/* --- CONTACT CARDS --- */
+.contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--color-line-soft);
+}
+
+/* CRITICAL FIX: This targets the inner div holding the text */
+.contact-card > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-card:last-of-type {
+  border-bottom: none;
+}
+
+.contact-card__icon {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  color: var(--color-teal);
+  font-size: 1.3rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.contact-card p {
+  font-size: 0.9rem;
+  overflow-wrap: break-word; /* Forces long emails to wrap */
+  word-break: break-word;
+}
+
+.contact-card p a {
+  color: var(--color-ink-soft);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.contact-card p a:hover {
+  color: var(--color-teal);
+}
+
+.contact__quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+/* --- CONTACT FORM --- */
+.contact__form-wrap {
+  padding: 1.25rem; /* Reduced padding for tiny 320px screens */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact__form-wrap h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.contact__form-sub {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.contact-form__field label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.contact-form__field input,
+.contact-form__field select,
+.contact-form__field textarea {
+  padding: 0.75rem 0.9rem;
+  border: 1.5px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-ink);
+  transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+  width: 100%; /* Safety check for inputs */
+  box-sizing: border-box;
+}
+
+.contact-form__field input:focus,
+.contact-form__field select:focus,
+.contact-form__field textarea:focus {
+  border-color: var(--color-teal);
+  background: var(--color-surface);
+  outline: none;
+}
+
+.contact-form__field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.contact-form__error {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #C8453A;
+}
+
+.contact-form__status {
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.contact-form__status--success {
+  background: rgba(46, 191, 165, 0.12);
+  color: #0E7C5A;
+}
+
+.contact-form__status--error {
+  background: rgba(200, 69, 58, 0.1);
+  color: #C8453A;
+}
+
+/* --- MAP --- */
+.contact-map__frame {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-line-soft);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box; /* Prevents map from pushing past padding */
+}
+
+.contact-map__frame iframe {
+  display: block;
+}
+
+/* --- RESPONSIVE QUERIES --- */
+@media (min-width: 768px) {
+  .contact__form-wrap {
+    padding: 2rem; /* Restores nice spacious padding on tablets and bigger */
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact__grid {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+}
