@@ -4,7 +4,7 @@ import Services from '../components/Services.jsx'
 import MissionVision from '../components/MissionVision.jsx'
 import WhyChooseUs from '../components/WhyChooseUs.jsx'
 import CtaBand from '../components/CtaBand.jsx'
-import Workinghourscard from '../components/workinghourscard.jsx'
+import Workinghourscard from '../components/WorkingHoursCard.jsx'
 
 export default function Home({ onBookAppointment }) {
   return (
@@ -14,7 +14,7 @@ export default function Home({ onBookAppointment }) {
       <MissionVision />
       <WhyChooseUs />
       <CtaBand onBookAppointment={onBookAppointment} />
-    <Workinghourscard></Workinghourscard>
+    <Workinghourscard/>
     </PageTransition>
   )
 }
